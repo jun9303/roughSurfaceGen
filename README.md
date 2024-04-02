@@ -1,5 +1,5 @@
 # roughSurfaceGen
-Artificial rough surface generator with some sample results based on the algorithm provided by Forooghi et al. (2017, J. Fluids Eng.). In MATLAB (tested on version R2023b or higher), run 'roughSurfGen' to generate and plot a rough surface with a given input set, and run 'genAlgOptScript' to search for the hueristically best rough surface fitting with a prescribed surface roughness properties (Ra, Rq, Rsk, Rku, etc.) powered by the MATLAB-based genetic algorithm (ga).
+Artificial rough surface generator with some sample results based on the algorithm provided by Forooghi et al. (2017, J. Fluids Eng.). In MATLAB (tested on version R2023b or higher), run 'roughSurfGen' to generate and plot a rough surface with a given input set, and run 'genAlgOptScript' to search for the hueristically best rough surface fitting with a prescribed surface roughness properties (Ra, Rq, Rsk, Rku, etc.) powered by the MATLAB-based [genetic algorithm (ga)][https://www.mathworks.com/help/gads/how-the-genetic-algorithm-works.html].
 
 This public repository is associated with our article '[To be provided]' published in the [To be provided]. Please refer to one of the links below to access our article.
 

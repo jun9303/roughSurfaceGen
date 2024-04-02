@@ -1,5 +1,5 @@
 # roughSurfaceGen
-Artificial rough surface generator with some sample results based on the algorithm provided by Forooghi et al. (2017, J. Fluids Eng.).
+Artificial rough surface generator with some sample results based on the algorithm provided by Forooghi et al. (2017, J. Fluids Eng.). Run 'surfGenPlotScript' in MATLAB (tested on version R2023b or higher).
 
 This public repository is associated with our article '[To be provided]' published in the [To be provided]. Please refer to one of the links below to access our open-access article.
 

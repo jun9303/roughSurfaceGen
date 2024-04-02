@@ -11,11 +11,11 @@ classdef roughSurfClass
     end
     
     methods
-        function obj = roughSurfClass(n, R_l, R_k, gamm, beta, L_x, L_z, options)
+        function obj = roughSurfClass(n, W_l, W_k, gamm, beta, L_x, L_z, options)
             arguments
                 n double {mustBeInRange(n,1.5,2.5)}
-                R_l double {mustBeInRange(R_l,0.1,10)}
-                R_k double {mustBeInRange(R_k,0.1,10)}
+                W_l double {mustBeInRange(W_l,0.1,10)}
+                W_k double {mustBeInRange(W_k,0.1,10)}
                 gamm double {mustBeInRange(gamm,0.1,2)}
                 beta double {mustBeInRange(beta,0.1,10)}
                 L_x double
@@ -24,19 +24,19 @@ classdef roughSurfClass
             end
             % Params
             % n: Roughness element shape factor (2: making elements quadratic)     
-            % R_l: Scale parameter of the Weibull distribution (for R_p) (in mm)   
-            % R_k: Shape parameter of the Weibull distribution (for R_p) (in mm)   
+            % W_l: Scale parameter of the Weibull distribution (for R_p) (in mm)   
+            % W_k: Shape parameter of the Weibull distribution (for R_p) (in mm)   
             % gamm: gamma*K_p = D_p (diameter of an roughness element)             
             % beta: adjustment factor to calculate the total # of elements         
             
             % L_x: Surface streamwise(x) length (in mm)                            
             % L_z: Surface spanwise(z) length (in mm)                              
-            R_p_mean = R_l * gamma(1 + 1 / R_k);
+            R_p_mean = W_l * gamma(1 + 1 / W_k);
             N_r = min([cast( L_x*L_z / (pi/4*(gamm*beta*R_p_mean)^2), 'int32' ) 1e4]); % 1e4 to avoid too many elements
             obj.n = n; obj.Lx = L_x; obj.Lz = L_z;
             obj.Nr = N_r;
             
-            wbl = makedist('Weibull','a',R_l,'b',R_k); % Weibull distribution
+            wbl = makedist('Weibull','a',W_l,'b',W_k); % Weibull distribution
             t = truncate(wbl, 0, R_p_mean*inf); % change inf (default) to a finite multiplier to use the truncated dist
 
             rng(options.seed, "twister"); % Mersen Twister (see Matsumoto & Nishimura 1998; DOI:10.1145/272991.272995)
@@ -93,7 +93,7 @@ classdef roughSurfClass
 
             res(1) = sum(abs(eta),"all")/numel(eta);            % Ra (average roughness)
             res(2) = sqrt(sum(eta.^2,"all")/numel(eta));        % Rq (RMS roughness)
-            res(3) = max(eta,[],"all") - min(eta,[],"all");     % Rz (roughness depth)
+            res(3) = max(eta,[],"all") - min(eta,[],"all");     % Rd (roughness depth)
             res(4) = 1/res(2)^3*(sum(eta.^3,"all")/numel(eta)); % Rsk (skewness)
             res(5) = 1/res(2)^4*(sum(eta.^4,"all")/numel(eta)); % Rku (kurtosis)
 

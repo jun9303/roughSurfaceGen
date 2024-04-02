@@ -8,16 +8,16 @@
 % L_z: Surface spanwise(z) length (in mm)                             
 
 %%%% adjust these parameters %%%%
-n = 2; 
-R_k = 1.12623820248166;
-R_l = 0.481265794650049; 
-gamm = 1.26866806425498; 
-beta = 0.223783283408655;
+n = 2;
+R_k = 1.53932855828047;
+R_l = 0.821535347167132; 
+gamm = 1.14341179097394; 
+beta = 0.348252811720820;
 L_x = 25; L_z = 25; % in mm
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%% changing this alters overall randomness %%%%
-random_seed = 862;
+random_seed = 743;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 rough_surface = roughSurfClass(n, R_l, R_k, gamm, beta, L_x, L_z, seed=random_seed);

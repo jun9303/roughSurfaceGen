@@ -2,7 +2,7 @@
 # Visit https://bit.ly/cffinit to generate yours today!
 
 cff-version: 1.2.0
-title: 'roughSurfGen: Artificial rough surface generator that fits prescribed
+title: 'roughSurfaceGen: Artificial rough surface generator that fits prescribed
   surface roughness parameters'
 message: >-
   If you use this software, please cite it using the

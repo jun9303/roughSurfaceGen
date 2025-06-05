@@ -14,7 +14,8 @@ An artificial rough surface generator based on the algorithm by Forooghi et al. 
 - **To Optimize Surface Properties:**  
   Run `genAlgOptScript` to find a rough surface that best matches your prescribed roughness properties. This script uses MATLAB’s genetic algorithm toolbox. For more details, see [How the genetic algorithm works](https://www.mathworks.com/help/gads/how-the-genetic-algorithm-works.html).
 
-**Repository Purpose**
+## Repository Purpose
+
 This repository accompanies the article *"Flow in ribbed cooling channels with additive manufacturing-induced surface roughness."* For further details and results, see the publication linked below.
 
 ## How to Cite
